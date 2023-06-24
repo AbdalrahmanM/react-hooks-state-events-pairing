@@ -1,23 +1,23 @@
-const video = {
-  id: 1,
-  title: "React Today and Tomorrow and 90% Cleaner React With Hooks",
-  embedUrl: "https://www.youtube.com/embed/dpw9EHDh2bM",
-  views: 730707,
-  createdAt: "Oct 26, 2018",
-  upvotes: 9210,
-  downvotes: 185,
-  comments: [
-    {
-      id: 1,
-      user: "duanebot",
-      comment: "first!",
-    },
-    {
-      id: 2,
-      user: "gaeron",
-      comment: "What a great tutorial!",
-    },
-  ],
+import React from "react";
+
+const Video = ({ video }) => {
+  const { title, embedUrl, views, createdAt } = video;
+
+  return (
+    <div className="video">
+      <h2>{title}</h2>
+      <iframe
+        width="919"
+        height="525"
+        src={embedUrl}
+        frameBorder="0"
+        allowFullScreen
+        title={title}
+      />
+      <p>Views: {views}</p>
+      <p>Created at: {createdAt}</p>
+    </div>
+  );
 };
 
-export default video;
+export default Video;
